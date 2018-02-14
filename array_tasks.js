@@ -53,7 +53,10 @@ const arrayTasks = {
 	findIndexesOf: function (arr, itemToFind) {
     let resultArray = [];
 
-    // 1st Style
+    // // 1st Style
+		// // I think Manny and I took the request to not use for loops
+    // // and to try to use the more specialised enumerators a little too far.
+    // // forEach is a valid option and makes more sense for some of these!
 		// arr.filter(function(element, index){
     //   element === itemToFind ? resultArray.push(index) : null;
     //
@@ -95,6 +98,9 @@ const arrayTasks = {
   // // original version of extension
   // // below it is a cleaned up version that is is more readable
   // // and requires fewer variables and functions being created
+	// //
+  // // idea for logic in below methods came from Manny thinking about
+	// // the bubble sort he studied as part of CS/CV week. Pretty cool idea!
 	// findDuplicates: function (arr) {
   //   let startArray = arr.sort();
   //   let middleArray = [];
