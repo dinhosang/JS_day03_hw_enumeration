@@ -52,19 +52,36 @@ const arrayTasks = {
 
 	// ----------- EXTENSION ------------
 
+	// findDuplicates: function (arr) {
+  //   let startArray = arr.sort();
+  //   let middleArray = [];
+  //   let finalArray = [];
+  //
+  //   startArray.reduce(function(firstOfPair, secondOfPair){
+  //     firstOfPair === secondOfPair ? middleArray.push(firstOfPair) : null;
+  //     return secondOfPair;
+  //   })
+  //
+  //   middleArray.forEach(function(number){
+  //     finalArray.includes(number) ? null : finalArray.push(number);
+  //   });
+  //   return finalArray;
+	// }
+
+
 	findDuplicates: function (arr) {
     let startArray = arr.sort();
-    let middleArray = [];
     let finalArray = [];
 
     startArray.reduce(function(firstOfPair, secondOfPair){
-      firstOfPair === secondOfPair ? middleArray.push(firstOfPair) : null;
+			let queryOne = firstOfPair === secondOfPair;
+			let queryTwo = !finalArray.includes(firstOfPair);
+
+			// ( ) below used for clarity, not needed to succeed
+      (queryOne && queryTwo) ? finalArray.push(firstOfPair) : null;
       return secondOfPair;
     })
 
-    middleArray.forEach(function(number){
-      finalArray.includes(number) ? null : finalArray.push(number);
-    });
     return finalArray;
 	}
 
