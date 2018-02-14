@@ -48,8 +48,8 @@ describe('Array tasks', function () {
 	})
 
 	it('EXTENSION - should find duplicate values in an unsorted array of numbers, returning a new array of the duplicates', function () {
-		const arr = [4, 1, 5, 2, 4, 5, 3, 5]
-		assert.deepStrictEqual(arrayTasks.findDuplicates(arr), [4, 5])
+		const arr = [3, 1, 5, 2, 4, 5, 3, 2]
+		assert.deepStrictEqual(arrayTasks.findDuplicates(arr), [2, 3, 5])
 	})
 
 })

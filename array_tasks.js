@@ -52,6 +52,9 @@ const arrayTasks = {
 
 	// ----------- EXTENSION ------------
 
+  // // original version of extension
+  // // below it is a cleaned up version that is is more readable
+  // // and requires fewer variables and functions being created
 	// findDuplicates: function (arr) {
   //   let startArray = arr.sort();
   //   let middleArray = [];
@@ -66,7 +69,7 @@ const arrayTasks = {
   //     finalArray.includes(number) ? null : finalArray.push(number);
   //   });
   //   return finalArray;
-	// }
+	// },
 
 
 	findDuplicates: function (arr) {
@@ -78,12 +81,23 @@ const arrayTasks = {
 			let queryTwo = !finalArray.includes(firstOfPair);
 
 			// ( ) below used for clarity, not needed to succeed
+      // see commented code below for another (more correct?)
+      // way to write this. Manny and I had that thought
+      // at the beginning but we also thought this ternary
+      // looked prettier :D
       (queryOne && queryTwo) ? finalArray.push(firstOfPair) : null;
+
+			// // above 'ternary' could (should?) be written as:
+			// if(queryOne && queryTwo){
+			// 	finalArray.push(firstOfPair)
+			// }
+
       return secondOfPair;
     })
 
     return finalArray;
 	}
+
 
 }
 
