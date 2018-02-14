@@ -80,14 +80,12 @@ const arrayTasks = {
 			let queryOne = firstOfPair === secondOfPair;
 			let queryTwo = !finalArray.includes(firstOfPair);
 
-			// ( ) below used for clarity, not needed to succeed
-      // see commented code below for another (more correct?)
-      // way to write this. Manny and I had that thought
-      // at the beginning but we also thought this ternary
-      // looked prettier :D
       (queryOne && queryTwo) ? finalArray.push(firstOfPair) : null;
 
-			// // above 'ternary' could (should?) be written as:
+			// // above 'ternary' could (should?) be written as seen below.
+			// // Manny and I had that thought at the beginning,
+			// // but we also thought this ternary looked prettier :D
+
 			// if(queryOne && queryTwo){
 			// 	finalArray.push(firstOfPair)
 			// }
