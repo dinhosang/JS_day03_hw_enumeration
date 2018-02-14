@@ -35,9 +35,17 @@ const arrayTasks = {
     return resultArray;
 	},
 
-	// findIndexesOf: function (arr, itemToFind) {
-
-	// },
+	findIndexesOf: function (arr, itemToFind) {
+    let resultArray = [];
+    arr.filter(function(element, index){
+      element === itemToFind ? resultArray.push(index) : null;
+      // let indexOfItemToReturn = element === itemToFind ? index : null;
+      // if (indexOfItemToReturn !== null){
+      //   resultArray.push(indexOfItemToReturn);
+      // }
+    });
+    return resultArray;
+	},
 
 	// sumOfAllEvenNumbersSquared: function (arr) {
 
