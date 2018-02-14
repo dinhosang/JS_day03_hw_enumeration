@@ -48,13 +48,25 @@ const arrayTasks = {
     resultArray = arr.filter(numberToCheck => numberToCheck % 2 === 0)
     resultArray = this.square(resultArray);
     return this.sum(resultArray);
-	}
+	},
 
 	// ----------- EXTENSION ------------
 
-	// findDuplicates: function (arr) {
+	findDuplicates: function (arr) {
+    let startArray = arr.sort();
+    let middleArray = [];
+    let finalArray = [];
 
-	// },
+    startArray.reduce(function(firstOfPair, secondOfPair){
+      firstOfPair === secondOfPair ? middleArray.push(firstOfPair) : null;
+      return secondOfPair;
+    })
+
+    middleArray.forEach(function(number){
+      finalArray.includes(number) ? null : finalArray.push(number);
+    });
+    return finalArray;
+	}
 
 }
 

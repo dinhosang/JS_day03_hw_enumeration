@@ -42,7 +42,7 @@ describe('Array tasks', function () {
 
 	// ----------- EXTENSION ------------
 
-	xit('EXTENSION - should find duplicate values in an array, returning a new array of the duplicates', function () {
+	it('EXTENSION - should find duplicate values in an array, returning a new array of the duplicates', function () {
 		const arr = [1, 2, 3, 4, 4, 5, 5, 5]
 		assert.deepStrictEqual(arrayTasks.findDuplicates(arr), [4, 5])
 	})
