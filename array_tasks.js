@@ -1,11 +1,22 @@
 const arrayTasks = {
 
 	concat: function (arr1, arr2) {
-    const resultArray = [];
-    resultArray.push(arr1, arr2);
-    return resultArray.reduce(function(finalArray, nextArray){
-      return finalArray.concat(nextArray);
-    });
+		// // 1st Style
+		// const resultArray = [];
+    // resultArray.push(arr1, arr2);
+    // return resultArray.reduce(function(finalArray, nextArray){
+    //   return finalArray.concat(nextArray);
+    // });
+
+
+		// // 2nd Style
+		// return arr1.concat(arr2);
+
+    // 3rd Style - not using built-in concat
+		const finalArray = []
+		arr1.forEach(element => finalArray.push(element))
+		arr2.forEach(element => finalArray.push(element))
+		return finalArray;
 	},
 
 	insertAt: function (arr, itemToAdd, index) {
@@ -16,9 +27,13 @@ const arrayTasks = {
 	},
 
 	square: function (arr) {
-    return arr.map(function(element){
-      return element ** 2;
-    })
+    // // 1st Style - old school
+    // return arr.map(function(element){
+    //   return element ** 2;
+    // })
+
+    // 2nd Style - ES6
+		return arr.map(element => element ** 2)
 	},
 
 	sum: function (arr) {
@@ -37,9 +52,34 @@ const arrayTasks = {
 
 	findIndexesOf: function (arr, itemToFind) {
     let resultArray = [];
-    arr.filter(function(element, index){
-      element === itemToFind ? resultArray.push(index) : null;
-    });
+
+    // 1st Style
+		// arr.filter(function(element, index){
+    //   element === itemToFind ? resultArray.push(index) : null;
+    //
+		// 	// // above 'ternary' could (should?) be written as seen below.
+		// 	// // Manny and I had that thought at the beginning,
+		// 	// // but we also thought this ternary looked prettier :D
+    //
+		// 	// if(element === itemToFind){
+		// 	// 	resultArray.push(index)
+		// 	// }
+    // });
+
+
+		// 2nd Style
+		// IF doesn't work in line below, also looks like it turned into a functional variable :o
+    // stops being so if I wrap the right side of = in brackets
+		let operation = (element, index) => element === itemToFind ? resultArray.push(index) : null;
+		arr.forEach(operation)
+
+
+		// // below returns null
+		// console.log(operation());
+    // // below returns function
+		// console.log(operation);
+
+		// below required for both styles
     return resultArray;
 	},
 
@@ -81,10 +121,6 @@ const arrayTasks = {
 			let queryTwo = !finalArray.includes(firstOfPair);
 
       (queryOne && queryTwo) ? finalArray.push(firstOfPair) : null;
-
-			// // above 'ternary' could (should?) be written as seen below.
-			// // Manny and I had that thought at the beginning,
-			// // but we also thought this ternary looked prettier :D
 
 			// if(queryOne && queryTwo){
 			// 	finalArray.push(firstOfPair)
