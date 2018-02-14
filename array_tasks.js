@@ -39,17 +39,16 @@ const arrayTasks = {
     let resultArray = [];
     arr.filter(function(element, index){
       element === itemToFind ? resultArray.push(index) : null;
-      // let indexOfItemToReturn = element === itemToFind ? index : null;
-      // if (indexOfItemToReturn !== null){
-      //   resultArray.push(indexOfItemToReturn);
-      // }
     });
     return resultArray;
 	},
 
-	// sumOfAllEvenNumbersSquared: function (arr) {
-
-	// }
+	sumOfAllEvenNumbersSquared: function (arr) {
+    let resultArray = [];
+    resultArray = arr.filter(numberToCheck => numberToCheck % 2 === 0)
+    resultArray = this.square(resultArray);
+    return this.sum(resultArray);
+	}
 
 	// ----------- EXTENSION ------------
 
